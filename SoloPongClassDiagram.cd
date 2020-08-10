@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SoloPong.MeadowApp">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAIAAAABAAwAACAQIMADAAgEGAAABiBAAQI=</HashCode>
+      <FileName>MeadowApp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="asyncGraphics" />
+      <Field Name="scoreKeeper" />
+      <Field Name="ball" />
+      <Field Name="scoreBanner" />
+      <Field Name="instructionBanner" />
+      <Field Name="soundGenerator" />
+      <Field Name="paddle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoloPong.AsyncGraphics" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQATAAAAAAAAAAAAAAACAAABgAIEAAAAhAAIA=</HashCode>
+      <FileName>AsyncGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoloPong.Ball" Collapsed="true">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="SoloPong.Ball.NotifyGameOver" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ball.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACAAAEQAAAAABgwBQACIACgQABCCAQrAAAQFAjEAAAA=</HashCode>
+      <FileName>Ball.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="scoreKeeper" />
+      <Field Name="soundGenerator" />
+      <Field Name="asyncGraphics" />
+      <Field Name="paddle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoloPong.Banner" Collapsed="true">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAgUAAAEAgQAAAAAAiABAABCABAAAA=</HashCode>
+      <FileName>Banner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoloPong.Paddle" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAABgAAAAACIGAQBAQAAAgIaACgAABABAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="asyncGraphics" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoloPong.ScoreKeeper" Collapsed="true">
+    <Position X="6.75" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="SoloPong.ScoreKeeper.NotifyScoreChanged" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ScoreKeeper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Class Name="SoloPong.ScoreKeeper.ScoreChangedArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ScoreKeeper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAgAIAAIAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScoreKeeper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoloPong.SoundGenerator" Collapsed="true">
+    <Position X="1.5" Y="5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="SoloPong.SoundGenerator.SoundMode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SoundGenerator.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AACAgAEAAAAAAAMAAAAQCBgAAAAJAAAAAAAQAAAABAA=</HashCode>
+      <FileName>SoundGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.3" />
+  </Class>
+  <Interface Name="SoloPong.ISounds" Collapsed="true">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAIAAAAQAAAAAAAIAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ISounds.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
