@@ -34,6 +34,10 @@
 //      RES: Pin D00
 //      DC: Pin D01
 //      
+//  ------------------------------------------
+//  NuGet Packages needed:
+//      Meadow.Foundation
+//      Meadow.Foundation.Displays.TftSpi
 //-----------------------------------------------------------------------
 
 namespace SoloPong
