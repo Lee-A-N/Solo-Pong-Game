@@ -160,7 +160,7 @@ namespace SoloPong
                 Device.CreateDigitalInputPort(Device.Pins.D04),
                 Device.CreatePwmPort(Device.Pins.D07));
 
-            var config = new SpiClockConfiguration(6000, SpiClockConfiguration.Mode.Mode3);
+            var config = new SpiClockConfiguration(48000, SpiClockConfiguration.Mode.Mode3);
 
             this.rotaryPaddle = new RotaryEncoderWithButton(Device, Device.Pins.D10, Device.Pins.D09, Device.Pins.D08, debounceDuration: 100);
             this.rotaryPaddle.Rotated += this.RotaryPaddle_Rotated;
