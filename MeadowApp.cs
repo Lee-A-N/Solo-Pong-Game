@@ -10,7 +10,7 @@
 //
 // Wiring:
 //
-//  SPDT switch:
+//  SPDT 3-position On/Off/On switch (used for volume settings Mute/Soft/Normal):
 //      top - 10K resistor to ground, pin D03
 //      middle - Vcc
 //      bottom - 10K resistor to ground, pin D04
