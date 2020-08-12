@@ -3,7 +3,7 @@
 //
 // This is the "Main" class for the Solo Pong game.
 //
-// Hardware: Meadow F7 board, Rotary Encoder, SPDT switch, ST7789 LDC display, 
+// Hardware: Meadow F7 board, Rotary Encoder, 3-position SPDT On/Off/On switch, ST7789 LDC display, 
 //              Piezo speaker, 0.1 microFarad capacitor, 2 10K resistors
 //
 // All of the hardware is include in the Pro Hack Kit.
