@@ -1,4 +1,5 @@
-﻿Solo Pong is a small arcade game for the Meadow with Hack Kit Pro.
+﻿Solo Pong is a small arcade game for the Meadow F7 with Hack Kit Pro or similar hardware.
+
 - It uses a rotary encoder for paddle movement.  Press the encoder knob for game start/restart.
 - It uses the ST7789 LCD display
 - A 3-position On/Off/On SPDT switch is used for setting the volume level (Mute, Soft, or Normal)
