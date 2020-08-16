@@ -135,6 +135,9 @@ namespace SoloPong
 
         /// <summary>
         /// Number of locks currently active for this object instance. Used for deadlock protection.
+        /// Since ball movement is initiated is initiated by a timer it might be possible for calls 
+        /// to the elapsed handler to "stack up", which could lead to a crash due to deadlock, 
+        /// especially if .net garbage collection occurrs and messes with the timing.
         /// </summary>
         private int lockCount = 0;
 
@@ -283,6 +286,8 @@ namespace SoloPong
                             {
                                 ++this.lockCount;
 
+                                // Lock to ensure that draw calls in the main thread do not interfere
+                                // with the show calls in the async-graphics thread.
                                 lock (this.asyncGraphics.LockObject)
                                 {
                                     if (this.moveTimer.Enabled)

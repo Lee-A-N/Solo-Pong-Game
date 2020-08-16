@@ -44,11 +44,6 @@ namespace SoloPong
         private readonly Thread showThread;
 
         /// <summary>
-        /// Number of locks currently active for this object instance. Used for deadlock protection.
-        /// </summary>
-        private int lockCount = 0;
-
-        /// <summary>
         /// Flag indicating whether the display should be refreshed in the thread's "show" loop.
         /// </summary>
         private bool updateDisplay = false;
@@ -84,16 +79,9 @@ namespace SoloPong
         /// </summary>
         public void ShowDirect()
         {
-            if (this.lockCount < 1)
+            lock (this.LockObject)
             {
-                ++this.lockCount;
-
-                lock (this.LockObject)
-                {
-                    this.graphics.Show();
-                }
-
-                --this.lockCount;
+                this.graphics.Show();
             }
         }
 
@@ -178,19 +166,15 @@ namespace SoloPong
         {
             while (true)
             {
-                if (this.lockCount < 1)
+                // Lock to ensure that draw calls in the main thread don't interfere with
+                // show calls on the graphics/screen-refresh thread.  The show call updates
+                // the screen with the draws that have occurred since the last show call.
+                lock (this.LockObject)
                 {
-                    ++this.lockCount;
-
-                    lock (this.LockObject)
+                    if (this.updateDisplay)
                     {
-                        if (this.updateDisplay)
-                        {
-                            this.graphics.Show();
-                        }
+                        this.graphics.Show();
                     }
-
-                    --this.lockCount;
                 }
 
                 Thread.Sleep(93);

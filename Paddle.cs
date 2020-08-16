@@ -78,6 +78,9 @@ namespace SoloPong
 
         /// <summary>
         /// Number of locks currently active for this object instance. Used for deadlock protection.
+        /// Since paddle movement is initiated asynchronously by turning the encoder knob it might
+        /// be possible for calls to the rotation handler to "stack up", which could lead to a crash
+        /// due to deadlock, especially if .net garbage collection occurrs and messes with the timing.
         /// </summary>
         private int lockCount = 0;
 
@@ -177,6 +180,8 @@ namespace SoloPong
                         ++this.lockCount;
 
                         // Moving right
+                        // Lock to ensure that draw calls in the main thread do not interfere
+                        // with the show calls in the async-graphics thread.
                         lock (this.asyncGraphics.LockObject)
                         {
                             // Erase from the old left x-coordinate to the new left x-coordinate
@@ -196,6 +201,8 @@ namespace SoloPong
                         ++this.lockCount;
 
                         // Moving left
+                        // Lock to ensure that draw calls in the main thread do not interfere
+                        // with the show calls in the async-graphics thread.
                         lock (this.asyncGraphics.LockObject)
                         {
                             // Draw from the old left x-coordinate to the new left x-coordinate
